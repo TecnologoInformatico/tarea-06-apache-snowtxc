@@ -27,3 +27,57 @@ repositorio: `https://github.com/TecnologoInformatico/AdmInf-web.git`
     "ip": ""
 }
 ```
+
+
+## Solucion
+
+1.
+   generar y agregar la clave ssh publica al la instancia en oracle
+
+2. contectarse al servidor publicando la clave publica ssh
+<br>
+<code>
+   ssh -i rsa_pub ubuntu@ip 
+</code> 
+
+3. clono el repositorio
+<br>
+<code>
+   mkdir repositorios
+</code> 
+<br>
+<code>
+   git clone https://github.com/TecnologoInformatico/AdmInf-web.git
+</code> 
+
+4. instalacion de apache
+<br>
+<code>
+   sudo apt install apache2
+</code> 
+<br>
+
+5. crear directorio
+<br>
+<code>
+    sudo mkdir  /var/www/ALUMNO
+</code> 
+<br>
+
+
+6. asignar permisos
+<br>
+<code>
+    sudo  chmod 777 ALUMNO/
+</code> 
+<br>
+
+7. asignar propietario
+<br>
+<code>
+    sudo chown ubuntu ALUMNO/
+</code> 
+<br>
+
+
+
