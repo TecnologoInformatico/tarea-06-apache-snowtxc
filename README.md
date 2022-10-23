@@ -31,53 +31,69 @@ repositorio: `https://github.com/TecnologoInformatico/AdmInf-web.git`
 
 ## Solucion
 
-1.
-   generar y agregar la clave ssh publica al la instancia en oracle
-
-2. contectarse al servidor publicando la clave publica ssh
+1. <code>mkdir repositorios</code> 
+   <code> git clone https://github.com/TecnologoInformatico/AdmInf-web.git</code> 
 <br>
-<code>
-   ssh -i rsa_pub ubuntu@ip 
-</code> 
 
-3. clono el repositorio
-<br>
-<code>
-   mkdir repositorios
-</code> 
-<br>
-<code>
-   git clone https://github.com/TecnologoInformatico/AdmInf-web.git
-</code> 
+2. <code>sudo apt update</code>
 
-4. instalacion de apache
+3. instalacion de apache
 <br>
 <code>
    sudo apt install apache2
 </code> 
 <br>
 
-5. crear directorio
+4. crear directorio
 <br>
 <code>
-    sudo mkdir  /var/www/ALUMNO
+    export ALUMNO=rcastro
+    sudo mkdir  /var/www/$ALUMNO
 </code> 
 <br>
 
-
-6. asignar permisos
+5. asignar permisos
 <br>
 <code>
-    sudo  chmod 777 ALUMNO/
+    sudo chown $USER: /var/www/$ALUMNO
 </code> 
 <br>
 
-7. asignar propietario
-<br>
-<code>
-    sudo chown ubuntu ALUMNO/
-</code> 
-<br>
+6. <code>cd  /var/www/$ALUMNO</code>
+   <br>
+    <code>nano index.html </code> dentro escribi un html basico
+    <br>
+   <code>cd /etc/apache2/sites-available/ </code>
+   <br>
+   <code>sudo cp 000-default.conf gci.conf</code>
+   <br>
+   <code>nano sudo nano gci.conf</code>
+   <br>
+   ![image info](./assets/img1.png)
+   <br>
+  <code>sudo a2ensite gci.conf</code>
+  <br>
+  <code>service apache2 reload</code>
+
+7. <code>sudo nano /etc/hosts</code> <br>
+![image info](./assets/img3.png)
+
+
+8. <code>service apache2 reload</code> <br>
+
+9. <code>sudo cp -a ~/repositorios/AdmInf-web/. /var/www/$ALUMNO</code> <br>
+
+10.  ![image info](./assets/img3.png)
+ 
+ 
+  resultado
+  ![image info](./assets/img4.png)
+  
+
+
+  
+
+
 
 
 
